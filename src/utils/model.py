@@ -15,7 +15,9 @@ import tensorflow as tf
 
 from models.keras import WeakDefense
 
+
 tf.compat.v1.disable_eager_execution() # bug fix
+
 
 def load_pool(trans_configs, model_configs, use_logits=False, wrap=False):
     pool = {}
