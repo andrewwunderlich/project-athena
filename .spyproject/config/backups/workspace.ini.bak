@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = ['src\\tutorials\\craft_adversarial_examples.py', 'src\\models\\image_processor.py', 'src\\configs\\demo\\model-mnist.json', 'src\\utils\\model.py', 'src\\configs\\demo\\attack-zk-mnist.json', 'src\\attacks\\attack.py']
+recent_files = ['src\\scripts\\craft_adversarial_examples.py', 'src\\configs\\experiment\\attack-zk-mnist.json', 'src\\attacks\\attack.py', 'data\\README.md', 'src\\tutorials\\transformation.py']
 

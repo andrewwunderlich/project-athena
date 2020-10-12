@@ -118,4 +118,4 @@ if __name__ == '__main__':
     data_bs = data_bs[:10]
     labels = labels[:10]
     generate_ae(model=target, data=data_bs, labels=labels, attack_configs=attack_configs,
-                save=True, output_dir=('C:/Users/andre/CSCE585_local/project-athena/saved_attacks'))
+                save=False, output_dir=('C:/Users/andre/CSCE585_local/project-athena/saved_attacks'))
