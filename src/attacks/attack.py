@@ -99,6 +99,7 @@ def _cw(model, data, labels, attack_args):
 
 
 def _pgd(model, data, labels, attack_args):
+    print('>>> Generating PGD examples.')
     eps = attack_args.get('eps', 0.3)
     eps_step = attack_args.get('eps_step', eps/10.)
     max_iter = attack_args.get('max_iter', 10)
@@ -135,6 +136,7 @@ def _jsma(model, data, labels, attack_args):
 
 
 def _df(model, data, labels, attack_args):
+    print('>>> Generating DeepFool Examples.')
     max_iter = attack_args.get('max_iter', 100)
     eps = attack_args.get('eps', 0.01)
     nb_grads = attack_args.get('nb_grads', 10)
