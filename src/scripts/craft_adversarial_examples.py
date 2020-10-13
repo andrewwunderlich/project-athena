@@ -35,7 +35,7 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
     data_loader = (data, labels)
 
     if len(labels.shape) > 1:
-        labels = [np.argmax(p) for p in labels]
+        labels = [np.argmax(p) for p in labels] #returns correct label
 
     # generate attacks one by one
     for id in range(num_attacks):
@@ -66,7 +66,7 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
             if output_dir is None:
                 raise ValueError("Cannot save images to a none path.")
             # save with a random name
-            file = os.path.join(output_dir, "{}.npy".format(time.monotonic()))
+            file = os.path.join(output_dir, "{}.npy".format(attack_configs.get(key).get("description")))
             print("Save the adversarial examples to file [{}].".format(file))
             np.save(file, data_adv)
 
@@ -114,8 +114,9 @@ if __name__ == '__main__':
     label_file = os.path.join(data_configs.get('dir'), data_configs.get('label_file'))
     labels = np.load(label_file)
 
-    # generate adversarial examples for a small subset
-    data_bs = data_bs[:10]
-    labels = labels[:10]
+    # generate adversarial examples 
+    num_images = 10
+    data_bs = data_bs[:num_images]
+    labels = labels[:num_images]
     generate_ae(model=target, data=data_bs, labels=labels, attack_configs=attack_configs,
-                save=False, output_dir=('C:/Users/andre/CSCE585_local/project-athena/saved_attacks'))
+                save=True, output_dir=('C:/Users/andre/CSCE585_local/project-athena/saved_attacks'))
