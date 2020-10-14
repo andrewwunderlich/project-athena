@@ -9,6 +9,7 @@ Modified version of src/tutorials/craft_adversarial_examples.py
 
 import argparse
 import numpy as np
+import pandas as pd
 import os
 import time
 from matplotlib import pyplot as plt
@@ -36,9 +37,18 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
 
     if len(labels.shape) > 1:
         labels = [np.argmax(p) for p in labels] #returns correct label
-
+    
+    # initialize array for storing predicted values for each attack
+    # each row corresponds to an image from the MNIST dataset
+    # the first column contains the true values, and each subsequent column 
+    # contains the predicted values for each attack.
+    # The array is initialized with '-1' at all elements so that any values 
+    # which are not overwritten with digits 0-9 are identifiable as erroneous
+    dataTable = -np.ones((num_images, num_attacks+1), dtype = int)
+    dataTable[:,0] = labels;
+    
     # generate attacks one by one
-    for id in range(num_attacks):
+    for id in range(num_attacks): #outer loop steps through attacks
         key = "configs{}".format(id)
         data_adv = generate(model=model,
                             data_loader=data_loader,
@@ -47,10 +57,13 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
         # predict the adversarial examples
         predictions = model.predict(data_adv)
         predictions = [np.argmax(p) for p in predictions]
+        
 
+        dataTable[:,id+1] = predictions #insert predicted values into new column
+        
         # plotting some examples
         num_plotting = min(data.shape[0], 3)
-        for i in range(num_plotting):
+        for i in range(num_plotting):  #inner loop steps through images to plot
             img = data_adv[i].reshape((img_rows, img_cols))
             plt.imshow(img, cmap='gray')
             title = '{}: {}->{}'.format(attack_configs.get(key).get("description"),
@@ -60,6 +73,7 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
             plt.title(title)
             plt.show()
             plt.close()
+    
 
         # save the adversarial example
         if save:
@@ -69,6 +83,7 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
             file = os.path.join(output_dir, "{}.npy".format(attack_configs.get(key).get("description")))
             print("Save the adversarial examples to file [{}].".format(file))
             np.save(file, data_adv)
+    print(dataTable)
 
 
 if __name__ == '__main__':
@@ -115,8 +130,9 @@ if __name__ == '__main__':
     labels = np.load(label_file)
 
     # generate adversarial examples 
-    num_images = 10
+    num_images = 30 #set to full 10,000 for final run, <50 while developing for speed
     data_bs = data_bs[:num_images]
     labels = labels[:num_images]
     generate_ae(model=target, data=data_bs, labels=labels, attack_configs=attack_configs,
-                save=True, output_dir=('C:/Users/andre/CSCE585_local/project-athena/saved_attacks'))
+                save=False, output_dir=('C:/Users/andre/CSCE585_local/'+
+                                       'project-athena/saved_attacks'))
