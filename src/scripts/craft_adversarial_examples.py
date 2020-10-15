@@ -88,7 +88,7 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
         print("Less than 50 images run--Printing dataTable to Console")
         print(dataTable)
     else: 
-        # save table to a file for analysis in Task 1 Jupyter notebook
+        # if >50, save table to a file for analysis in Task 1 Jupyter notebook
         file = os.path.join(output_dir, "dataTable.npy")
         print("Saving dataTable to "+file)
         np.save(file, dataTable)
@@ -142,5 +142,5 @@ if __name__ == '__main__':
     data_bs = data_bs[:num_images]
     labels = labels[:num_images]
     generate_ae(model=target, data=data_bs, labels=labels, attack_configs=attack_configs,
-                save=False, output_dir=('C:/Users/andre/CSCE585_local/'+
+                save=True, output_dir=('C:/Users/andre/CSCE585_local/'+
                                        'project-athena/saved_attacks'))
