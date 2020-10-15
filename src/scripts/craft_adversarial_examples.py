@@ -62,7 +62,7 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
         dataTable[:,id+1] = predictions #insert predicted values into new column
         
         # plotting some examples
-        num_plotting = min(data.shape[0], 3)
+        num_plotting = min(data.shape[0], 2)
         for i in range(num_plotting):  #inner loop steps through images to plot
             img = data_adv[i].reshape((img_rows, img_cols))
             plt.imshow(img, cmap='gray')
@@ -83,7 +83,15 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
             file = os.path.join(output_dir, "{}.npy".format(attack_configs.get(key).get("description")))
             print("Save the adversarial examples to file [{}].".format(file))
             np.save(file, data_adv)
-    print(dataTable)
+    if (dataTable.shape[0]<50): 
+        #if <50 images run, print table to console for debug and analysis
+        print("Less than 50 images run--Printing dataTable to Console")
+        print(dataTable)
+    else: 
+        # save table to a file for analysis in Task 1 Jupyter notebook
+        file = os.path.join(output_dir, "dataTable.npy")
+        print("Saving dataTable to "+file)
+        np.save(file, dataTable)
 
 
 if __name__ == '__main__':
