@@ -154,6 +154,7 @@ def _op(model, data, labels, attack_args):
 
 
 def _spatial(model, data, labels, attack_args):
+    print("Generating Spatial-Transformation Examples")
     max_translation = attack_args.get('max_translation', 0.2)
     num_translations = attack_args.get('num_translations', 1)
     max_rotation = attack_args.get('max_rotation', 10)
