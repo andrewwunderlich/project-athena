@@ -68,8 +68,7 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
             plt.imshow(img, cmap='gray')
             title = '{}: {}->{}'.format(attack_configs.get(key).get("description"),
                                         labels[i],
-                                        predictions[i]
-                                        )
+                                        predictions[i])
             plt.title(title)
             plt.show()
             plt.close()
@@ -81,7 +80,7 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
                 raise ValueError("Cannot save images to a none path.")
             # save with a random name
             file = os.path.join(output_dir, "{}.npy".format(attack_configs.get(key).get("description")))
-            print("Save the adversarial examples to file [{}].".format(file))
+            print("Saving the adversarial examples to file [{}].".format(file))
             np.save(file, data_adv)
     if (dataTable.shape[0]<50): 
         #if <50 images run, print table to console for debug and analysis
@@ -89,7 +88,7 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
         print(dataTable)
     else: 
         # if >50, save table to a file for analysis in Task 1 Jupyter notebook
-        file = os.path.join(output_dir, "dataTable.npy")
+        file = os.path.join(output_dir, "/data/dataTable_um.npy")
         print("Saving dataTable to "+file)
         np.save(file, dataTable)
 
@@ -138,9 +137,9 @@ if __name__ == '__main__':
     labels = np.load(label_file)
 
     # generate adversarial examples 
-    num_images = 30 #set to full 10,000 for final run, <50 while developing for speed
+    num_images = 15 #set to full 10,000 for final run, <50 while developing for speed
     data_bs = data_bs[:num_images]
     labels = labels[:num_images]
     generate_ae(model=target, data=data_bs, labels=labels, attack_configs=attack_configs,
-                save=True, output_dir=('C:/Users/andre/CSCE585_local/'+
+                save=False, output_dir=('C:/Users/andre/CSCE585_local/'+
                                        'project-athena/saved_attacks'))

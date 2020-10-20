@@ -128,6 +128,7 @@ def _bim(model, data, labels, attack_args):
 
 
 def _jsma(model, data, labels, attack_args):
+    print("Generating JSMA Examples")
     theta = attack_args.get('theta', 0.15)
     gamma = attack_args.get('gamma', 0.5)
 
