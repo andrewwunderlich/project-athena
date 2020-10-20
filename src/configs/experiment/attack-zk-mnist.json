@@ -51,28 +51,33 @@
     "eps": 0.3
   },
   "configs10": {
-    "attack": "deepfool",
-    "description": "df_eps0.03",
-    "eps": 0.03
+    "attack": "jsma",
+    "description": "jsma_theta0.03",
+    "theta": 0.03,
+    "gamma": 0.7
   },
   "configs11": {
-    "attack": "deepfool",
-    "description": "df_eps0.07",
-    "eps": 0.07
+    "attack": "jsma",
+    "description": "jsma_theta0.07",
+    "theta": 0.07,
+    "gamma": 0.7
   },
   "configs12": {
-    "attack": "deepfool",
-    "description": "df_eps0.1",
-    "eps": 0.1
+    "attack": "jsma",
+    "description": "jsma_theta0.1",
+    "theta": 0.1,
+    "gamma": 0.7
   },
   "configs13": {
-    "attack": "deepfool",
-    "description": "df_eps0.2",
-    "eps": 0.2
+    "attack": "jsma",
+    "description": "jsma_theta0.2",
+    "theta": 0.2,
+    "gamma": 0.7
   },
   "configs14": {
-    "attack": "deepfool",
-    "description": "df_eps0.3",
-    "eps": 0.3
+    "attack": "jsma",
+    "description": "jsma_theta0.3",
+    "theta": 0.3,
+    "gamma": 0.7
   }
 }
