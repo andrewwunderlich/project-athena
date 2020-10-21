@@ -13,9 +13,11 @@ import pandas as pd
 import os
 import time
 from matplotlib import pyplot as plt
+import scipy.io
 
 from utils.model import load_lenet
 from utils.file import load_from_json
+from utils.metrics import error_rate
 from attacks.attack import generate
 
 
@@ -58,6 +60,8 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
         predictions = model.predict(data_adv)
         predictions = [np.argmax(p) for p in predictions]
         
+        err_rate = error_rate(np.asarray(predictions), np.asarray(labels));
+        print('>>>Error Rate: ',err_rate)
 
         dataTable[:,id+1] = predictions #insert predicted values into new column
         
@@ -79,7 +83,7 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
             if output_dir is None:
                 raise ValueError("Cannot save images to a none path.")
             # save with a random name
-            file = os.path.join(output_dir, "{}.npy".format(attack_configs.get(key).get("description")))
+            file = os.path.join(output_dir, "ae_{}.npy".format(attack_configs.get(key).get("description")))
             print("Saving the adversarial examples to file [{}].".format(file))
             np.save(file, data_adv)
     if (dataTable.shape[0]<50): 
@@ -87,13 +91,17 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
         print("Less than 50 images run--Printing dataTable to Console")
         print(dataTable)
     else: 
-        # if >50, save table to a file for analysis in Task 1 Jupyter notebook
-        file = os.path.join(output_dir, "/data/dataTable_um.npy")
+        # if >=50, save table to a file for analysis in Task 1 Jupyter notebook
+        file = os.path.join(output_dir, "dataTable.mat")
         print("Saving dataTable to "+file)
-        np.save(file, dataTable)
+        #np.save(file, dataTable)
+        scipy.io.savemat(file, {'dataTable':dataTable})
 
 
 if __name__ == '__main__':
+    
+    # probably need to edit the parser arguments here in order to change the 
+    # targeted model 
     parser = argparse.ArgumentParser(description="")
 
     parser.add_argument('-m', '--model-configs', required=False,
@@ -137,9 +145,9 @@ if __name__ == '__main__':
     labels = np.load(label_file)
 
     # generate adversarial examples 
-    num_images = 15 #set to full 10,000 for final run, <50 while developing for speed
+    num_images = 51 #set to large number (maybe 1000) for final run, <50 while developing for speed
     data_bs = data_bs[:num_images]
     labels = labels[:num_images]
     generate_ae(model=target, data=data_bs, labels=labels, attack_configs=attack_configs,
-                save=False, output_dir=('C:/Users/andre/CSCE585_local/'+
+                save=True, output_dir=('C:/Users/andre/CSCE585_local/'+
                                        'project-athena/saved_attacks'))
