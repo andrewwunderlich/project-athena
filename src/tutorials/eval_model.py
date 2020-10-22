@@ -75,7 +75,7 @@ def evaluate(trans_configs, model_configs,
     # Evaluate AEs.
     results = {}
     ae_list = data_configs.get('ae_files')
-    ae_file = os.path.join(data_configs.get('dir'), ae_list[4])
+    ae_file = os.path.join(data_configs.get('dir'), ae_list[4]) #why only [4] and not who list?
     x_adv = np.load(ae_file)
 
     # evaluate the undefended model on the AE
@@ -111,13 +111,13 @@ if __name__ == '__main__':
     """
 
     parser.add_argument('-t', '--trans-configs', required=False,
-                        default='../configs/demo/athena-mnist.json',
+                        default='configs/demo/athena-mnist.json',
                         help='Configuration file for transformations.')
     parser.add_argument('-m', '--model-configs', required=False,
-                        default='../configs/demo/model-mnist.json',
+                        default='configs/demo/model-mnist.json',
                         help='Folder where models stored in.')
     parser.add_argument('-d', '--data-configs', required=False,
-                        default='../configs/demo/data-mnist.json',
+                        default='configs/demo/data-mnist.json',
                         help='Folder where test data stored in.')
     parser.add_argument('-o', '--output-root', required=False,
                         default='results',
