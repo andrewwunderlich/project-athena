@@ -47,8 +47,8 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
     # contains the predicted values for each attack.
     # The array is initialized with '-1' at all elements so that any values 
     # which are not overwritten with digits 0-9 are identifiable as erroneous
-    dataTable = -np.ones((num_images, num_attacks+1), dtype = int)
-    dataTable[:,0] = labels;
+    #dataTable = -np.ones((num_images, num_attacks+1), dtype = int)
+    #dataTable[:,0] = labels;
     
     # generate attacks one by one
     for id in range(num_attacks): #outer loop steps through attacks
@@ -64,7 +64,7 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
         err_rate = error_rate(np.asarray(predictions), np.asarray(labels));
         print('>>>Error Rate: ',err_rate)
 
-        dataTable[:,id+1] = predictions #insert predicted values into new column
+        #dataTable[:,id+1] = predictions #insert predicted values into new column
         
         # plotting some examples
         num_plotting = min(data.shape[0], 2)
@@ -87,6 +87,7 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
             file = os.path.join(output_dir, "ae_{}.npy".format(attack_configs.get(key).get("description")))
             print("Saving the adversarial examples to file [{}].".format(file))
             np.save(file, data_adv)
+    '''
     if (dataTable.shape[0]<50): 
         #if <50 images run, print table to console for debug and analysis
         print("Less than 50 images run--Printing dataTable to Console")
@@ -97,9 +98,10 @@ def generate_ae(model, data, labels, attack_configs, save=False, output_dir=None
         print("Saving dataTable to "+file)
         #np.save(file, dataTable)
         scipy.io.savemat(file, {'dataTable':dataTable})
+    '''
         
 def evaluate(trans_configs, model_configs,
-             data_configs, labels, save=False, output_dir=None):
+             data_configs, num_images, save=False, output_dir=None):
     """
     Apply transformation(s) on images.
     :param trans_configs: dictionary. The collection of the parameterized transformations to test.
@@ -136,32 +138,39 @@ def evaluate(trans_configs, model_configs,
                         model_configs=model_configs,
                         active_list=True,
                         wrap=True)
-    # create AVEP ensemble from the WD pool
+    # create AVEP and MV ensembles from the WD pool
     wds = list(pool.values())
     print(">>> wds:", type(wds), type(wds[0]))
     ensemble_AVEP = Ensemble(classifiers=wds, strategy=ENSEMBLE_STRATEGY.AVEP.value)
-
+    ensemble_MV = Ensemble(classifiers=wds, strategy=ENSEMBLE_STRATEGY.MV.value)
 
     # load the benign samples
     bs_file = os.path.join(data_configs.get('dir'), data_configs.get('bs_file'))
     x_bs = np.load(bs_file)
     img_rows, img_cols = x_bs.shape[1], x_bs.shape[2]
 
-    ''' # this section replaced by passing in labels as a parameter
     # load the corresponding true labels
     label_file = os.path.join(data_configs.get('dir'), data_configs.get('label_file'))
     labels = np.load(label_file)
     if len(labels.shape) > 1:
         labels = [np.argmax(p) for p in labels] #returns correct label
-    '''
+        
+    # cut dataset to specified number of images
+    x_bs = x_bs[:num_images]
+    labels = labels[:num_images]
+    
     # get indices of benign samples that are correctly classified by the targeted model
     print(">>> Evaluating UM on [{}], it may take a while...".format(bs_file))
     pred_bs = undefended.predict(x_bs)
     corrections = get_corrections(y_pred=pred_bs, y_true=labels)
 
     # Evaluate AEs.
-    results = {}
+    #results = {}
+
+    
+    
     ae_list = data_configs.get('ae_files')
+    predictionData = -np.ones((num_images, len(ae_list), 4), dtype = int)
 
     for ae_count in range(len(ae_list)): # step through ae's one by one
         ae_file = os.path.join(data_configs.get('dir'), ae_list[ae_count])
@@ -174,25 +183,42 @@ def evaluate(trans_configs, model_configs,
         #err_um = error_rate(y_pred=pred_adv_um, y_true=labels, correct_on_bs=corrections)
         # track the result
         #results['UM'] = err_um
+        predictionData[:,ae_count,0] = pred_adv_um  
 
-        # evaluate the ensemble on the AE
-        print(">>> Evaluating ensemble on [{}], it may take a while...".format(ae_file))
+        # evaluate the ensembles on the AE
+        print(">>> Evaluating AVEP on [{}], it may take a while...".format(ae_file))
         pred_adv_AVEP = ensemble_AVEP.predict(x_adv)
         pred_adv_AVEP = [np.argmax(p) for p in pred_adv_AVEP]
         #err_AVEP = error_rate(y_pred=pred_adv_ens, y_true=labels, correct_on_bs=corrections)
         # track the result
         #results['Ensemble'] = err_AVEP
+        predictionData[:,ae_count,1] = pred_adv_AVEP
+        
+        print(">>> Evaluating MV on [{}], it may take a while...".format(ae_file))
+        pred_adv_MV = ensemble_MV.predict(x_adv)
+        pred_adv_MV = [np.argmax(p) for p in pred_adv_MV]
+        predictionData[:,ae_count,2] = pred_adv_MV
 
         # evaluate the baseline on the AE
         print(">>> Evaluating baseline model on [{}], it may take a while...".format(ae_file))
         pred_adv_pgd_adt = pgd_adt.predict(x_adv)
         pred_adv_pgd_adt = [np.argmax(p) for p in pred_adv_pgd_adt]
+        predictionData[:,ae_count,3] = pred_adv_pgd_adt
+        
         #err_pgd_adt = error_rate(y_pred=pred_adv_pgd_adt, y_true=labels, correct_on_bs=corrections)
         # track the result
         #results['PGD-ADT'] = err_pgd_adt
+    print(predictionData[:15,:,0])
+    print(predictionData[:15,:,1])
+    print(predictionData[:15,:,2])
+    print(predictionData[:15,:,3])
+    
+    if save:
+        file = os.path.join(output_dir, "predictionData.mat")
+        print("Saving predictionData and labels to "+file)
+        scipy.io.savemat(file, {'predictionData':predictionData, 'labels':labels}) #save to .mat file format
+    
 
-    # TODO: collect and dump the evaluation results to file(s) such that you can analyze them later.
-    print(">>> Evaluations on [{}]:\n{}".format(ae_file, results))
 
 
 if __name__ == '__main__':
@@ -247,19 +273,20 @@ if __name__ == '__main__':
     labels = np.load(label_file)
 
     # generate adversarial examples 
-    num_images = 15 #set to large number (maybe 1000) for final run, <50 while developing for speed
+    num_images = 51 #set to large number (maybe 1000) for final run, <50 while developing for speed
     data_bs = data_bs[:num_images]
     labels = labels[:num_images]
     '''generate_ae(model=target, 
                 data=data_bs, 
                 labels=labels, 
                 attack_configs=attack_configs,
-                save=False, output_dir=('C:/Users/andre/CSCE585_local/'+
+                save=True, output_dir=('C:/Users/andre/CSCE585_local/'+
                                        'project-athena/data'))
     '''
     evaluate(trans_configs=trans_configs,
              model_configs=model_configs,
              data_configs=data_configs,
-             labels = labels
-             save=False,
-             output_dir=args.output_root)
+             num_images = num_images,
+             save=True,
+             output_dir=('C:/Users/andre/CSCE585_local/'+
+                         'project-athena/data'))
