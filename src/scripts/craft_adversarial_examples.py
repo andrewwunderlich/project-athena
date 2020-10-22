@@ -165,10 +165,7 @@ def evaluate(trans_configs, model_configs,
     corrections = get_corrections(y_pred=pred_bs, y_true=labels)
 
     # Evaluate AEs.
-    #results = {}
-
-    
-    
+   
     ae_list = data_configs.get('ae_files')
     predictionData = -np.ones((num_images, len(ae_list), 4), dtype = int)
 
@@ -180,32 +177,41 @@ def evaluate(trans_configs, model_configs,
         print(">>> Evaluating UM on [{}], it may take a while...".format(ae_file))
         pred_adv_um = undefended.predict(x_adv) #num_images by 10 array
         pred_adv_um = [np.argmax(p) for p in pred_adv_um] # returns prediction
-        #err_um = error_rate(y_pred=pred_adv_um, y_true=labels, correct_on_bs=corrections)
-        # track the result
-        #results['UM'] = err_um
+        err_um = error_rate(y_pred=np.asarray(pred_adv_um), 
+                            y_true=np.asarray(labels), 
+                            correct_on_bs=corrections)
+        print(">>> error rate: ",err_um)
         predictionData[:,ae_count,0] = pred_adv_um  
 
         # evaluate the ensembles on the AE
         print(">>> Evaluating AVEP on [{}], it may take a while...".format(ae_file))
         pred_adv_AVEP = ensemble_AVEP.predict(x_adv)
         pred_adv_AVEP = [np.argmax(p) for p in pred_adv_AVEP]
-        #err_AVEP = error_rate(y_pred=pred_adv_ens, y_true=labels, correct_on_bs=corrections)
-        # track the result
-        #results['Ensemble'] = err_AVEP
+        err_AVEP = error_rate(y_pred=np.asarray(pred_adv_AVEP), 
+                              y_true=np.asarray(labels), 
+                              correct_on_bs=corrections)
+        print(">>> error rate: ", err_AVEP)
         predictionData[:,ae_count,1] = pred_adv_AVEP
         
         print(">>> Evaluating MV on [{}], it may take a while...".format(ae_file))
         pred_adv_MV = ensemble_MV.predict(x_adv)
         pred_adv_MV = [np.argmax(p) for p in pred_adv_MV]
+        err_MV = error_rate(y_pred = np.asarray(pred_adv_MV), 
+                            y_true = np.asarray(labels), 
+                            correct_on_bs=corrections)
+        print(">>> error rate: ", err_MV)
         predictionData[:,ae_count,2] = pred_adv_MV
 
         # evaluate the baseline on the AE
         print(">>> Evaluating baseline model on [{}], it may take a while...".format(ae_file))
         pred_adv_pgd_adt = pgd_adt.predict(x_adv)
         pred_adv_pgd_adt = [np.argmax(p) for p in pred_adv_pgd_adt]
+        err_pgd_adt = error_rate(y_pred=np.asarray(pred_adv_pgd_adt), 
+                                 y_true=np.asarray(labels), 
+                                 correct_on_bs=corrections)
+        print(">>> error rate: ", err_pgd_adt)    
         predictionData[:,ae_count,3] = pred_adv_pgd_adt
         
-        #err_pgd_adt = error_rate(y_pred=pred_adv_pgd_adt, y_true=labels, correct_on_bs=corrections)
         # track the result
         #results['PGD-ADT'] = err_pgd_adt
     print(predictionData[:15,:,0])
