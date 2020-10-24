@@ -169,6 +169,7 @@ def _bim(model, data, labels, attack_args):
     :param attack_args:
     :return:
     """
+    print('Generating BIM examples.')
     eps = attack_args.get('eps', 0.3)
     eps_step = attack_args.get('eps_step', eps/10.)
     max_iter = attack_args.get('max_iter', 100)
