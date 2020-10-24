@@ -222,7 +222,7 @@ def evaluate(trans_configs, model_configs,
     print(predictionData[:15,:,3])
     
     if save:
-        file = os.path.join(output_dir, "predictionData2.mat")
+        file = os.path.join(output_dir, "predictionData.mat")
         print("Saving predictionData and labels to "+file)
         scipy.io.savemat(file, {'predictions':predictionData, 
                                 'labels':labels,
@@ -241,7 +241,7 @@ if __name__ == '__main__':
                         default='configs/experiment/model-mnist.json',
                         help='Folder where models are stored.')
     parser.add_argument('-t', '--trans-configs', required=False,
-                        default='configs/experiment/athena-mnist.json',
+                        default='configs/demo/athena-mnist.json',
                         help='Configuration file for transformations.')
     parser.add_argument('-d', '--data-configs', required=False,
                         default='configs/experiment/data-mnist.json',
@@ -286,13 +286,14 @@ if __name__ == '__main__':
     num_images = 1000 #set to large number (maybe 1000) for final run, <50 while developing for speed
     data_bs = data_bs[:num_images]
     labels = labels[:num_images]
+    '''
     generate_ae(model=target, 
                 data=data_bs, 
                 labels=labels, 
                 attack_configs=attack_configs,
                 save=True, output_dir=('C:/Users/andre/CSCE585_local/'+
                                        'project-athena/data'))
-    
+    '''
     evaluate(trans_configs=trans_configs,
              model_configs=model_configs,
              data_configs=data_configs,
