@@ -163,10 +163,12 @@ def evaluate(trans_configs, model_configs,
     print(">>> Evaluating UM on [{}], it may take a while...".format(bs_file))
     pred_bs = undefended.predict(x_bs)
     corrections = get_corrections(y_pred=pred_bs, y_true=labels)
+    pred_bs = [np.argmax(p) for p in pred_bs]
 
     # Evaluate AEs.
    
     ae_list = data_configs.get('ae_files')
+    print(">>>>>>> AE list: ", ae_list)
     predictionData = -np.ones((num_images, len(ae_list), 4), dtype = int)
 
     for ae_count in range(len(ae_list)): # step through ae's one by one
@@ -220,9 +222,11 @@ def evaluate(trans_configs, model_configs,
     print(predictionData[:15,:,3])
     
     if save:
-        file = os.path.join(output_dir, "predictionData.mat")
+        file = os.path.join(output_dir, "predictionData2.mat")
         print("Saving predictionData and labels to "+file)
-        scipy.io.savemat(file, {'predictionData':predictionData, 'labels':labels}) #save to .mat file format
+        scipy.io.savemat(file, {'predictions':predictionData, 
+                                'labels':labels,
+                                'pred_bs_um':pred_bs}) #save to .mat file format
     
 
 
@@ -237,7 +241,7 @@ if __name__ == '__main__':
                         default='configs/experiment/model-mnist.json',
                         help='Folder where models are stored.')
     parser.add_argument('-t', '--trans-configs', required=False,
-                        default='configs/demo/athena-mnist.json',
+                        default='configs/experiment/athena-mnist.json',
                         help='Configuration file for transformations.')
     parser.add_argument('-d', '--data-configs', required=False,
                         default='configs/experiment/data-mnist.json',
@@ -279,16 +283,16 @@ if __name__ == '__main__':
     labels = np.load(label_file)
 
     # generate adversarial examples 
-    num_images = 51 #set to large number (maybe 1000) for final run, <50 while developing for speed
+    num_images = 1000 #set to large number (maybe 1000) for final run, <50 while developing for speed
     data_bs = data_bs[:num_images]
     labels = labels[:num_images]
-    '''generate_ae(model=target, 
+    generate_ae(model=target, 
                 data=data_bs, 
                 labels=labels, 
                 attack_configs=attack_configs,
                 save=True, output_dir=('C:/Users/andre/CSCE585_local/'+
                                        'project-athena/data'))
-    '''
+    
     evaluate(trans_configs=trans_configs,
              model_configs=model_configs,
              data_configs=data_configs,
