@@ -46,7 +46,7 @@ def generate_whitebox_ae(model, data, labels, attack_configs, save=False, output
     
     for id in range(num_attacks): #outer loop steps through attacks
         key = "configs{}".format(id)
-        data_adv = generate_whitebox(model=model,
+        data_adv = generate(model=model,
                             data_loader=data_loader,
                             attack_args=attack_configs.get(key)
                             )
@@ -77,7 +77,7 @@ def generate_whitebox_ae(model, data, labels, attack_configs, save=False, output
             if output_dir is None:
                 raise ValueError("Cannot save images to a none path.")
             # save with a random name
-            file = os.path.join(output_dir, "ae_{}.npy".format(attack_configs.get(key).get("description")))
+            file = os.path.join(output_dir, "ae_whitebox_{}.npy".format(attack_configs.get(key).get("description")))
             print("Saving the adversarial examples to file [{}].".format(file))
             np.save(file, data_adv)
     
@@ -123,9 +123,21 @@ if __name__ == '__main__':
     trans_configs = load_from_json(args.trans_configs)
 
     # load the targeted model
-    model_file = os.path.join(model_configs.get("dir"), model_configs.get("um_file"))
-    target = load_lenet(file=model_file, wrap=True)
-
+    #model_file = os.path.join(model_configs.get("dir"), model_configs.get("um_file"))
+    #target = load_lenet(file=model_file, wrap=True)
+    # load weak defenses into a pool
+    pool, _ = load_pool(trans_configs=trans_configs,
+                        model_configs=model_configs,
+                        active_list=True,
+                        wrap=True)
+    # create AVEP and MV ensembles from the WD pool
+    wds = list(pool.values())
+    print(">>> wds:", type(wds), type(wds[0]))
+    #ensemble_AVEP = Ensemble(classifiers=wds, strategy=ENSEMBLE_STRATEGY.AVEP.value)
+    ensemble_MV = Ensemble(classifiers=wds, strategy=ENSEMBLE_STRATEGY.MV.value)
+    target = ensemble_MV
+    
+    
     # load the benign samples
     data_file = os.path.join(data_configs.get('dir'), data_configs.get('bs_file'))
     data_bs = np.load(data_file)
@@ -151,5 +163,5 @@ if __name__ == '__main__':
              num_images = num_images,
              save=True,
              output_dir=('C:/Users/andre/CSCE585_local/'+
-                         'project-athena/data'))
+                         'project-athena/Task 2/results'))
     '''
