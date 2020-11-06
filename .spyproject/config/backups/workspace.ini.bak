@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = ['src\\scripts\\craft_adversarial_examples.py']
+recent_files = ['src\\scripts\\craft_adversarial_examples.py', 'src\\scripts\\whitebox_attack.py', 'src\\attacks\\attack.py', 'src\\attacks\\utils.py']
 

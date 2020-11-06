@@ -154,7 +154,7 @@ if __name__ == '__main__':
                 data=data_bs, 
                 labels=labels, 
                 attack_configs=attack_configs,
-                save=True, output_dir=('C:/Users/andre/CSCE585_local/'+
+                save=False, output_dir=('C:/Users/andre/CSCE585_local/'+
                                        'project-athena/Task 2/data'))
     '''
     evaluate(trans_configs=trans_configs,
