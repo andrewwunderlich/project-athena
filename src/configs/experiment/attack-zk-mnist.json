@@ -1,78 +1,113 @@
 {
-  "num_attacks": 15,
+  "num_attacks": 10,
   "configs0": {
-    "attack": "spatial-transformation",
-    "description": "spatial_maxrot10",
-    "max_rotation": 10
+    "attack": "fgsm",
+    "description": "fgsm_eps0.03",
+    "eps": 0.03,
+    "distribution": {
+      "num_samples": 1000,
+      "transformation": "rotation",
+      "min_angle": -45,
+      "max_angle": 45
+    }
   },
   "configs1": {
-    "attack": "spatial-transformation",
-    "description": "spatial_maxrot20",
-    "max_rotation": 20
+    "attack": "fgsm",
+    "description": "fgsm_eps0.07",
+    "eps": 0.07,
+    "distribution": {
+      "num_samples": 1000,
+      "transformation": "rotation",
+      "min_angle": -45,
+      "max_angle": 45
+    }
   },
-    "configs2": {
-    "attack": "spatial-transformation",
-    "description": "spatial_maxrot30",
-    "max_rotation": 30
+  "configs2": {
+    "attack": "fgsm",
+    "description": "fgsm_eps0.1",
+    "eps": 0.1,
+    "distribution": {
+      "num_samples": 1000,
+      "transformation": "rotation",
+      "min_angle": -45,
+      "max_angle": 45
+    }
   },
   "configs3": {
-    "attack": "spatial-transformation",
-    "description": "spatial_maxrot40",
-    "max_rotation": 40
+    "attack": "fgsm",
+    "description": "fgsm_eps0.2",
+    "eps": 0.2,
+    "distribution": {
+      "num_samples": 1000,
+      "transformation": "rotation",
+      "min_angle": -45,
+      "max_angle": 45
+    }
   },
   "configs4": {
-    "attack": "spatial-transformation",
-    "description": "spatial_maxrot50",
-    "max_rotation": 50
+    "attack": "fgsm",
+    "description": "fgsm_eps0.3",
+    "eps": 0.3,
+    "distribution": {
+      "num_samples": 1000,
+      "transformation": "rotation",
+      "min_angle": -45,
+      "max_angle": 45
+    }
   },
   "configs5": {
     "attack": "pgd",
     "description": "pgd_eps0.03",
-    "eps": 0.03
+    "eps": 0.03,
+    "distribution": {
+      "num_samples": 500,
+      "transformation": "translation",
+      "min_offset": -0.2,
+      "max_offset": 0.2
+    }
   },
   "configs6": {
     "attack": "pgd",
     "description": "pgd_eps0.07",
-    "eps": 0.07
+    "eps": 0.07,
+    "distribution": {
+      "num_samples": 500,
+      "transformation": "translation",
+      "min_offset": -0.2,
+      "max_offset": 0.2
+    }
   },
   "configs7": {
     "attack": "pgd",
     "description": "pgd_eps0.1",
-    "eps": 0.1
+    "eps": 0.1,
+    "distribution": {
+      "num_samples": 500,
+      "transformation": "translation",
+      "min_offset": -0.2,
+      "max_offset": 0.2
+    }
   },
   "configs8": {
     "attack": "pgd",
     "description": "pgd_eps0.2",
-    "eps": 0.2
+    "eps": 0.2,
+    "distribution": {
+      "num_samples": 500,
+      "transformation": "translation",
+      "min_offset": -0.2,
+      "max_offset": 0.2
+    }
   },
   "configs9": {
     "attack": "pgd",
     "description": "pgd_eps0.3",
-    "eps": 0.3
-  },
-  "configs10": {
-    "attack": "bim",
-    "description": "bim_eps0.1",
-    "eps": 0.1
-  },
-  "configs11": {
-    "attack": "bim",
-    "description": "bim_eps0.2",
-    "eps": 0.2
-  },
-  "configs12": {
-    "attack": "bim",
-    "description": "bim_eps0.3",
-    "eps": 0.3
-  },
-  "configs13": {
-    "attack": "bim",
-    "description": "bim_eps0.4",
-    "eps": 0.4
-  },
-  "configs14": {
-    "attack": "bim",
-    "description": "bim_eps0.5",
-    "eps": 0.5
+    "eps": 0.3,
+    "distribution": {
+      "num_samples": 500,
+      "transformation": "translation",
+      "min_offset": -0.2,
+      "max_offset": 0.2
+    }
   }
 }

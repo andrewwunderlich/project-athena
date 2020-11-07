@@ -23,7 +23,7 @@ def batch_sample_from_distribution(X, distribution_args):
 def sample_from_distribution(x, distribution_args):
     """
     Apply transformations from the specific distributions on given input x.
-    :param x: the legitimate sample.
+    :param x: the legitimate sample. (a single image)
     :param distribution_args: dictionary. configuration of the distribution.
     :return:
     """
