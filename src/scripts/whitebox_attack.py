@@ -21,7 +21,9 @@ from utils.file import load_from_json
 from utils.metrics import error_rate, get_corrections
 from attacks.attack import generate
 
-def generate_whitebox_ae(model, data, labels, attack_configs, save=False, output_dir=None):
+def generate_whitebox_ae(model, data, labels, attack_configs, 
+                         eot=False,
+                         save=False, output_dir=None):
     """
     Generate whitebox adversarial examples using the optimization approach.
     
@@ -42,13 +44,25 @@ def generate_whitebox_ae(model, data, labels, attack_configs, save=False, output
 
     if len(labels.shape) > 1:
         labels = [np.argmax(p) for p in labels] #returns correct label
+        
+    # initialize array for storing predicted values for each attack
+    # each row corresponds to an image from the MNIST dataset
+    # the first column contains the true values, and each subsequent column 
+    # contains the predicted values for each attack.
+    # The array is initialized with '-1' at all elements so that any values 
+    # which are not overwritten with digits 0-9 are identifiable as erroneous
+    dataTable = -np.ones((num_images, num_attacks+1), dtype = int)
+    dataTable[:,0] = labels;
     
     
     for id in range(num_attacks): #outer loop steps through attacks
         key = "configs{}".format(id)
+        attack_args = attack_configs.get(key)
+        attack_args["eot"] = eot
+        
         data_adv = generate(model=model,
                             data_loader=data_loader,
-                            attack_args=attack_configs.get(key)
+                            attack_args=attack_args
                             )
         # predict the adversarial examples
         predictions = model.predict(data_adv)
@@ -57,7 +71,7 @@ def generate_whitebox_ae(model, data, labels, attack_configs, save=False, output
         err_rate = error_rate(np.asarray(predictions), np.asarray(labels));
         print('>>>Error Rate: ',err_rate)
 
-        #dataTable[:,id+1] = predictions #insert predicted values into new column
+        dataTable[:,id+1] = predictions #insert predicted values into new column
         
         # plotting some examples
         num_plotting = min(data.shape[0], 2)
@@ -80,6 +94,10 @@ def generate_whitebox_ae(model, data, labels, attack_configs, save=False, output
             file = os.path.join(output_dir, "ae_whitebox_{}.npy".format(attack_configs.get(key).get("description")))
             print("Saving the adversarial examples to file [{}].".format(file))
             np.save(file, data_adv)
+    file = os.path.join(output_dir, "dataTable.mat")
+    print("Saving dataTable to "+file)
+    #np.save(file, dataTable)
+    scipy.io.savemat(file, {'dataTable':dataTable})
     
 
 if __name__ == '__main__':
@@ -92,7 +110,7 @@ if __name__ == '__main__':
                         default='configs/experiment/model-mnist.json',
                         help='Folder where models are stored.')
     parser.add_argument('-t', '--trans-configs', required=False,
-                        default='configs/demo/athena-mnist.json',
+                        default='configs/experiment/athena-mnist.json',
                         help='Configuration file for transformations.')
     parser.add_argument('-d', '--data-configs', required=False,
                         default='configs/experiment/data-mnist.json',
@@ -146,7 +164,7 @@ if __name__ == '__main__':
     labels = np.load(label_file)
 
     # generate adversarial examples 
-    num_images = 15 #set to large number (maybe 1000) for final run, <50 while developing for speed
+    num_images = 200 #set to large number (maybe 1000) for final run, <50 while developing for speed
     data_bs = data_bs[:num_images]
     labels = labels[:num_images]
 
@@ -154,14 +172,6 @@ if __name__ == '__main__':
                 data=data_bs, 
                 labels=labels, 
                 attack_configs=attack_configs,
-                save=False, output_dir=('C:/Users/andre/CSCE585_local/'+
+                eot = True,
+                save=True, output_dir=('C:/Users/andre/CSCE585_local/'+
                                        'project-athena/Task 2/data'))
-    '''
-    evaluate(trans_configs=trans_configs,
-             model_configs=model_configs,
-             data_configs=data_configs,
-             num_images = num_images,
-             save=True,
-             output_dir=('C:/Users/andre/CSCE585_local/'+
-                         'project-athena/Task 2/results'))
-    '''

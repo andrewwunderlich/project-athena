@@ -82,7 +82,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="")
 
     parser.add_argument('-p', '--pool-configs', required=False,
-                        default='/configs/demo/athena-mnist.json')
+                        default='configs/demo/athena-mnist.json')
     parser.add_argument('-m', '--model-configs', required=False,
                         default='configs/demo/model-mnist.json',
                         help='Folder where models stored in.')
