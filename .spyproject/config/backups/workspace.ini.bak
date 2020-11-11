@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = ['src\\scripts\\craft_adversarial_examples.py', 'src\\scripts\\whitebox_attack.py', 'src\\tutorials\\craft_adversarial_examples.py', 'src\\configs\\experiment\\athena-mnist.json', 'src\\configs\\demo\\model-mnist.json', 'src\\configs\\experiment\\model-mnist.json', 'src\\configs\\experiment\\data-mnist.json', 'src\\attacks\\attack.py', 'src\\configs\\demo\\attack-zk-mnist.json', 'src\\configs\\experiment\\attack-zk-mnist.json', 'src\\models\\image_processor.py']
+recent_files = ['src\\scripts\\craft_adversarial_examples.py', 'src\\scripts\\whitebox_attack.py', 'src\\tutorials\\craft_adversarial_examples.py', 'src\\configs\\experiment\\athena-mnist.json', 'src\\configs\\experiment\\model-mnist.json', 'src\\configs\\experiment\\data-mnist.json', 'src\\attacks\\attack.py', 'src\\configs\\demo\\attack-zk-mnist.json', 'src\\configs\\experiment\\attack-zk-mnist.json', 'src\\models\\image_processor.py']
 
