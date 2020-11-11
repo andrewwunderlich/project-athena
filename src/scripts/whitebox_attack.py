@@ -173,5 +173,5 @@ if __name__ == '__main__':
                 labels=labels, 
                 attack_configs=attack_configs,
                 eot = False,
-                save=True, output_dir=('C:/Users/andre/CSCE585_local/'+
+                save=False, output_dir=('C:/Users/andre/CSCE585_local/'+
                                        'project-athena/Task 2/data'))
