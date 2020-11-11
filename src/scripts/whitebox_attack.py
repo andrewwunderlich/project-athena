@@ -91,13 +91,13 @@ def generate_whitebox_ae(model, data, labels, attack_configs,
             if output_dir is None:
                 raise ValueError("Cannot save images to a none path.")
             # save with a random name
-            file = os.path.join(output_dir, "ae_whitebox_{}.npy".format(attack_configs.get(key).get("description")))
+            file = os.path.join(output_dir, "ae_whitebox_{}_EOToff.npy".format(attack_configs.get(key).get("description")))
             print("Saving the adversarial examples to file [{}].".format(file))
             np.save(file, data_adv)
     if save:
-        file = os.path.join(output_dir, "dataTable.mat")
+        file = os.path.join(output_dir, "dataTable2.mat")
         print("Saving dataTable to "+file)
-        scipy.io.savemat(file, {'dataTable':dataTable})
+        scipy.io.savemat(file, {'dataTable2':dataTable})
     
 
 if __name__ == '__main__':
@@ -164,7 +164,7 @@ if __name__ == '__main__':
     labels = np.load(label_file)
 
     # generate adversarial examples 
-    num_images = 2 #set to large number (maybe 1000) for final run, <50 while developing for speed
+    num_images = 200 #set to large number (maybe 1000) for final run, <50 while developing for speed
     data_bs = data_bs[:num_images]
     labels = labels[:num_images]
 
@@ -172,6 +172,6 @@ if __name__ == '__main__':
                 data=data_bs, 
                 labels=labels, 
                 attack_configs=attack_configs,
-                eot = True,
-                save=False, output_dir=('C:/Users/andre/CSCE585_local/'+
+                eot = False,
+                save=True, output_dir=('C:/Users/andre/CSCE585_local/'+
                                        'project-athena/Task 2/data'))
