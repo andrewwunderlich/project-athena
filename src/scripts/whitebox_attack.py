@@ -94,10 +94,10 @@ def generate_whitebox_ae(model, data, labels, attack_configs,
             file = os.path.join(output_dir, "ae_whitebox_{}.npy".format(attack_configs.get(key).get("description")))
             print("Saving the adversarial examples to file [{}].".format(file))
             np.save(file, data_adv)
-    file = os.path.join(output_dir, "dataTable.mat")
-    print("Saving dataTable to "+file)
-    #np.save(file, dataTable)
-    scipy.io.savemat(file, {'dataTable':dataTable})
+    if save:
+        file = os.path.join(output_dir, "dataTable.mat")
+        print("Saving dataTable to "+file)
+        scipy.io.savemat(file, {'dataTable':dataTable})
     
 
 if __name__ == '__main__':
@@ -164,7 +164,7 @@ if __name__ == '__main__':
     labels = np.load(label_file)
 
     # generate adversarial examples 
-    num_images = 200 #set to large number (maybe 1000) for final run, <50 while developing for speed
+    num_images = 2 #set to large number (maybe 1000) for final run, <50 while developing for speed
     data_bs = data_bs[:num_images]
     labels = labels[:num_images]
 
@@ -173,5 +173,5 @@ if __name__ == '__main__':
                 labels=labels, 
                 attack_configs=attack_configs,
                 eot = True,
-                save=True, output_dir=('C:/Users/andre/CSCE585_local/'+
+                save=False, output_dir=('C:/Users/andre/CSCE585_local/'+
                                        'project-athena/Task 2/data'))
