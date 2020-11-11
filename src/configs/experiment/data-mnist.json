@@ -1,22 +1,17 @@
 {
-    "dir": "../data/",
+    "dir": "Task 2/data/",
     "bs_file": "test_BS-mnist-clean.npy",
     "label_file": "test_Label-mnist-clean.npy",
     "ae_files": [
-        "ae_bim_eps0.1.npy",
-        "ae_bim_eps0.2.npy",
-        "ae_bim_eps0.3.npy",
-        "ae_bim_eps0.4.npy",
-        "ae_bim_eps0.5.npy",
-        "ae_pgd_eps0.03.npy",
-        "ae_pgd_eps0.07.npy",
-        "ae_pgd_eps0.1.npy",
-        "ae_pgd_eps0.2.npy",
-        "ae_pgd_eps0.3.npy",
-        "ae_spatial_maxrot10.npy",
-        "ae_spatial_maxrot20.npy",
-        "ae_spatial_maxrot30.npy",
-        "ae_spatial_maxrot40.npy",
-        "ae_spatial_maxrot50.npy"
+        "ae_whitebox_fgsm_eps0.03.npy",
+        "ae_whitebox_fgsm_eps0.07.npy",        
+        "ae_whitebox_fgsm_eps0.1.npy",
+        "ae_whitebox_fgsm_eps0.2.npy",
+        "ae_whitebox_fgsm_eps0.3.npy",
+        "ae_whitebox_pgd_eps0.03.npy",
+        "ae_whitebox_pgd_eps0.07.npy",
+        "ae_whitebox_pgd_eps0.1.npy",
+        "ae_whitebox_pgd_eps0.2.npy",
+        "ae_whitebox_pgd_eps0.3.npy"
     ]
 }
