@@ -100,6 +100,142 @@ def generate_whitebox_ae(model, data, labels, attack_configs,
         scipy.io.savemat(file, {'dataTable2':dataTable})
     
 
+def evaluate_baseline_attacks(trans_configs, model_configs,
+             data_configs, num_images, save=False, output_dir=None):
+    """
+    Apply transformation(s) on images.
+    :param trans_configs: dictionary. The collection of the parameterized transformations to test.
+        in the form of
+        { configsx: {
+            param: value,
+            }
+        }
+        The key of a configuration is 'configs'x, where 'x' is the id of corresponding weak defense.
+    :param model_configs:  dictionary. Defines model related information.
+        Such as, location, the undefended model, the file format, etc.
+    :param data_configs: dictionary. Defines data related information.
+        Such as, location, the file for the true labels, the file for the benign samples,
+        the files for the adversarial examples, etc.
+    :param labels: the correct labels for each image
+    :param save: boolean. Save the transformed sample or not.
+    :param output_dir: path or str. The location to store the transformed samples.
+        It cannot be None when save is True.
+    :return:
+    """
+    '''
+    # Load the baseline defense (PGD-ADT model)
+    pgd_adt = load_lenet(file=model_configs.get('pgd_trained'), trans_configs=None,
+                                  use_logits=False, wrap=False)
+    '''
+    # get the undefended model (UM)
+    file = os.path.join(model_configs.get('dir'), model_configs.get('um_file'))
+    undefended = load_lenet(file=file,
+                            trans_configs=trans_configs.get('configs0'),
+                            wrap=True)
+    print(">>> um:", type(undefended))
+    
+    # load weak defenses into a pool
+    pool, _ = load_pool(trans_configs=trans_configs,
+                        model_configs=model_configs,
+                        active_list=True,
+                        wrap=True)
+    # create AVEP and MV ensembles from the WD pool
+    wds = list(pool.values())
+    print(">>> wds:", type(wds), type(wds[0]))
+    #ensemble_AVEP = Ensemble(classifiers=wds, strategy=ENSEMBLE_STRATEGY.AVEP.value)
+    ensemble_MV = Ensemble(classifiers=wds, strategy=ENSEMBLE_STRATEGY.MV.value)
+    
+    
+    # load the benign samples
+    bs_file = os.path.join(data_configs.get('dir'), data_configs.get('bs_file'))
+    x_bs = np.load(bs_file)
+    img_rows, img_cols = x_bs.shape[1], x_bs.shape[2]
+
+    # load the corresponding true labels
+    label_file = os.path.join(data_configs.get('dir'), data_configs.get('label_file'))
+    labels = np.load(label_file)
+    if len(labels.shape) > 1:
+        labels = [np.argmax(p) for p in labels] #returns correct label
+        
+    # cut dataset to specified number of images
+    x_bs = x_bs[:num_images]
+    labels = labels[:num_images]
+    
+    # get indices of benign samples that are correctly classified by the targeted model
+    print(">>> Evaluating UM on [{}], it may take a while...".format(bs_file))
+    pred_bs = undefended.predict(x_bs)
+    corrections = get_corrections(y_pred=pred_bs, y_true=labels)
+    pred_bs = [np.argmax(p) for p in pred_bs]
+    
+    # Evaluate AEs.
+   
+    ae_list = data_configs.get('ae_files')
+    print(">>>>>>> AE list: ", ae_list)
+    predictionData = -np.ones((num_images, len(ae_list)), dtype = int)
+
+    for ae_count in range(len(ae_list)): # step through ae's one by one
+        ae_file = os.path.join(data_configs.get('dir'), ae_list[ae_count])
+        x_adv = np.load(ae_file)
+        
+        x_adv = x_adv[:num_images,:,:,:]
+
+        '''
+        # evaluate the undefended model on the AE
+        print(">>> Evaluating UM on [{}], it may take a while...".format(ae_file))
+        pred_adv_um = undefended.predict(x_adv) #num_images by 10 array
+        pred_adv_um = [np.argmax(p) for p in pred_adv_um] # returns prediction
+        err_um = error_rate(y_pred=np.asarray(pred_adv_um), 
+                            y_true=np.asarray(labels), 
+                            correct_on_bs=corrections)
+        print(">>> error rate: ",err_um)
+        predictionData[:,ae_count,0] = pred_adv_um  
+
+        # evaluate the ensembles on the AE
+        print(">>> Evaluating AVEP on [{}], it may take a while...".format(ae_file))
+        pred_adv_AVEP = ensemble_AVEP.predict(x_adv)
+        pred_adv_AVEP = [np.argmax(p) for p in pred_adv_AVEP]
+        err_AVEP = error_rate(y_pred=np.asarray(pred_adv_AVEP), 
+                              y_true=np.asarray(labels), 
+                              correct_on_bs=corrections)
+        print(">>> error rate: ", err_AVEP)
+        predictionData[:,ae_count,1] = pred_adv_AVEP
+        '''
+        print(">>> Evaluating MV on [{}], it may take a while...".format(ae_file))
+        pred_adv_MV = ensemble_MV.predict(x_adv)
+        pred_adv_MV = [np.argmax(p) for p in pred_adv_MV]
+        err_MV = error_rate(y_pred = np.asarray(pred_adv_MV), 
+                            y_true = np.asarray(labels), 
+                            correct_on_bs=corrections)
+        print(">>> error rate: ", err_MV)
+        predictionData[:,ae_count] = pred_adv_MV
+        
+        '''
+        # evaluate the baseline on the AE
+        print(">>> Evaluating baseline model on [{}], it may take a while...".format(ae_file))
+        pred_adv_pgd_adt = pgd_adt.predict(x_adv)
+        pred_adv_pgd_adt = [np.argmax(p) for p in pred_adv_pgd_adt]
+        err_pgd_adt = error_rate(y_pred=np.asarray(pred_adv_pgd_adt), 
+                                 y_true=np.asarray(labels), 
+                                 correct_on_bs=corrections)
+        print(">>> error rate: ", err_pgd_adt)    
+        predictionData[:,ae_count,3] = pred_adv_pgd_adt
+        '''
+        # track the result
+        #results['PGD-ADT'] = err_pgd_adt
+    #print(predictionData[:15,:])
+
+    
+    if save:
+        file = os.path.join(output_dir, "predictionData.mat")
+        print("Saving predictionData and labels to "+file)
+        scipy.io.savemat(file, {'predictions':predictionData, 
+                                'labels':labels,
+                                'pred_bs_um':pred_bs}) #save to .mat file format
+    
+
+
+
+
 if __name__ == '__main__':
     
     # probably need to edit the parser arguments here in order to change the 
@@ -167,7 +303,7 @@ if __name__ == '__main__':
     num_images = 200 #set to large number (maybe 1000) for final run, <50 while developing for speed
     data_bs = data_bs[:num_images]
     labels = labels[:num_images]
-
+    '''
     generate_whitebox_ae(model=target, 
                 data=data_bs, 
                 labels=labels, 
@@ -175,3 +311,11 @@ if __name__ == '__main__':
                 eot = False,
                 save=False, output_dir=('C:/Users/andre/CSCE585_local/'+
                                        'project-athena/Task 2/data'))
+    '''
+    evaluate_baseline_attacks(trans_configs=trans_configs,
+             model_configs=model_configs,
+             data_configs=data_configs,
+             num_images = num_images,
+             save=True,
+             output_dir=('C:/Users/andre/CSCE585_local/'+
+                         'project-athena/Task 2/data'))
