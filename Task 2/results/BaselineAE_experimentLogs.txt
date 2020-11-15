@@ -1,0 +1,498 @@
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.1306532663316583
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-fgsm_eps0.3.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.2864321608040201
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-bim_ord2_eps0.75.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.24623115577889448
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-bim_ord2_eps0.85.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.1407035175879397
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-bim_ord2_eps1.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.06030150753768844
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-bim_ord2_eps1.1.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.035175879396984924
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-bim_ord2_eps1.2.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.035175879396984924
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-bim_ordinf_eps0.075.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.010050251256281407
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-bim_ordinf_eps0.082.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.01507537688442211
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-bim_ordinf_eps0.09.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.020100502512562814
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-bim_ordinf_eps0.1.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.020100502512562814
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-bim_ordinf_eps0.12.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.035175879396984924
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-cw_l2_lr0.0098.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.04020100502512563
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-cw_l2_lr0.01.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.035175879396984924
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-cw_l2_lr0.012.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.06532663316582915
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-cw_l2_lr0.015.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.12562814070351758
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-cw_l2_lr0.018.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.1407035175879397
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-deepfool_l2_overshoot3.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.2613065326633166
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-deepfool_l2_overshoot5.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.19597989949748743
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-deepfool_l2_overshoot8.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.2914572864321608
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-deepfool_l2_overshoot16.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.5577889447236181
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-deepfool_l2_overshoot50.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.7788944723618091
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-jsma_theta0.15_gamma0.5.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.010050251256281407
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-jsma_theta0.17_gamma0.5.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.0
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-jsma_theta0.18_gamma0.5.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.010050251256281407
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-jsma_theta0.21_gamma0.5.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.005025125628140704
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-jsma_theta0.25_gamma0.5.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.010050251256281407
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-pgd_eps0.075.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.010050251256281407
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-pgd_eps0.082.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.01507537688442211
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-pgd_eps0.09.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.010050251256281407
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-pgd_eps0.1.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.01507537688442211
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-pgd_eps0.11.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.02512562814070352
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-mim_eps0.06.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.0
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-mim_eps0.067.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.005025125628140704
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-mim_eps0.075.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.01507537688442211
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-mim_eps0.085.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.01507537688442211
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-mim_eps0.1.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.020100502512562814
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-onepixel_pxCount15.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.02512562814070352
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-onepixel_pxCount30.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.020100502512562814
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-onepixel_pxCount35.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.01507537688442211
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-onepixel_pxCount40.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.03015075376884422
+>>> Evaluating MV on [../data/test_AE-mnist-cnn-clean-onepixel_pxCount75.npy], it may take a while...
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:65: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _filter_trans(X, trans_args)
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:87: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray
+  coords = np.array(np.ogrid[:image.shape[0], :image.shape[1]])
+C:\Users\andre\anaconda3\envs\anthena_env\lib\site-packages\skimage\transform\radon_transform.py:91: UserWarning: Radon transform: image must be zero outside the reconstruction circle
+  warn('Radon transform: image must be zero outside the '
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:861: FutureWarning: 'filter' is a deprecated argument name for `iradon`. It will be removed in version 0.19. Please use 'filter_name' instead.
+  interpolation=interpolation, circle=circle))
+C:\Users\andre\CSCE585_local\project-athena\src\models\image_processor.py:73: UserWarning: Possible precision loss converting image of type float32 to uint8 as required by rank filters. Convert manually using skimage.util.img_as_ubyte to silence this warning.
+  return _segment_trans(X, trans_args)
+>>> error rate:  0.035175879396984924
+Saving predictionData and labels to C:/Users/andre/CSCE585_local/project-athena/Task 2/data\predictionData.mat
